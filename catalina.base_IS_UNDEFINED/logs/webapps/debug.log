@@ -1,45 +1,21 @@
-2020-04-11 17:26:08.287 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 17:26:08.402 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 一点点(String), 奶茶(String), etse(String), 123(String), test(String), null, 2020-04-11 17:26:07.601(Timestamp), null, 1(Integer), 审核中(String)
-2020-04-11 17:26:08.421 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 18:26:13.696 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2020-04-11 18:26:13.778 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==> Parameters: 一点点(String), 奶茶(String), 测试(String), 123(String), 测试(String), 2020-04-11 18:26:12.994(Timestamp), 1(Integer), 审核中(String), 2(Integer), 1(Long), 1(Long)
-2020-04-11 18:26:13.786 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - <==    Updates: 1
-2020-04-11 22:26:24.425 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:26:24.487 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:26:24.323(Timestamp), 2020-04-11 22:26:24.323(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:26:24.497 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:26:24.886 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2020-04-11 22:26:24.887 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==> Parameters: 二点点(String), 奶茶(String), etse(String), 123(String), 2020-04-11 22:26:24.323(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 2(Long)
-2020-04-11 22:26:24.889 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - <==    Updates: 1
-2020-04-11 22:27:49.322 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:27:49.382 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:27:49.22(Timestamp), 2020-04-11 22:27:49.22(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:27:49.384 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:27:49.861 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2020-04-11 22:27:49.863 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==> Parameters: 二点点(String), 奶茶(String), etse(String), 123(String), 2020-04-11 22:27:49.22(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 3(Long)
-2020-04-11 22:27:49.866 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - <==    Updates: 1
-2020-04-11 22:28:45.369 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:28:45.437 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:28:45.31(Timestamp), 2020-04-11 22:28:45.31(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:28:45.443 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:28:45.851 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2020-04-11 22:28:45.854 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==> Parameters: 二点点(String), 奶茶(String), etse(String), 123(String), 2020-04-11 22:28:45.31(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 4(Long)
-2020-04-11 22:28:45.855 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - <==    Updates: 1
-2020-04-11 22:29:21.973 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:29:22.623 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:29:10.178(Timestamp), 2020-04-11 22:29:10.669(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:29:22.627 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:33:30.532 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:33:30.605 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:33:30.43(Timestamp), 2020-04-11 22:33:30.43(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:33:30.610 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:42:01.811 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:42:01.889 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:42:01.727(Timestamp), 2020-04-11 22:42:01.727(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:42:01.896 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:48:41.971 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:48:42.053 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:48:41.903(Timestamp), 2020-04-11 22:48:41.903(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:48:42.060 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:48:42.494 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2020-04-11 22:48:42.496 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==> Parameters: 二点点(String), 奶茶(String), etse(String), 123(String), \8\54ba8e02-f006-47d9-addd-225e0df02fee.jpg(String), 2020-04-11 22:48:41.903(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 8(Long)
-2020-04-11 22:48:42.541 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - <==    Updates: 1
-2020-04-11 22:49:32.711 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img,priority,create_time,last_edit_time, enable_status,advice) values ( ?,?,?,?,?,?,?,?, ?,?,?,?,? ) 
-2020-04-11 22:49:32.762 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 二点点(String), 奶茶(String), etse(String), 123(String), null, null, 2020-04-11 22:49:32.65(Timestamp), 2020-04-11 22:49:32.65(Timestamp), 0(Integer), 审核中(String)
-2020-04-11 22:49:32.767 [main] DEBUG cn.edu.hznu.dao.IShopDao.insertShop - <==    Updates: 1
-2020-04-11 22:49:33.092 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2020-04-11 22:49:33.093 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - ==> Parameters: 二点点(String), 奶茶(String), etse(String), 123(String), \9\0b06cefe-62fb-4109-8887-21b9015eb2d3.jpg(String), 2020-04-11 22:49:32.65(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 9(Long)
-2020-04-11 22:49:33.095 [main] DEBUG cn.edu.hznu.dao.IShopDao.updateShop - <==    Updates: 1
+2020-04-15 14:43:32.116 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_catrgory where product_category_id=? and shop_id=? 
+2020-04-15 14:44:33.360 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_catrgory where product_category_id=? and shop_id=? 
+2020-04-15 14:44:33.443 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 14:45:14.819 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
+2020-04-15 14:45:14.904 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 14:45:14.911 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2020-04-15 15:10:27.217 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
+2020-04-15 15:10:27.351 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 15:10:27.352 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
+2020-04-15 15:14:03.694 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
+2020-04-15 15:14:03.802 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 15:14:03.803 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
+2020-04-15 15:16:16.113 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
+2020-04-15 15:16:16.223 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 15:16:16.228 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
+2020-04-15 15:16:20.890 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
+2020-04-15 15:16:20.956 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 15:16:20.959 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
+2020-04-15 15:16:45.025 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
+2020-04-15 15:16:45.103 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
+2020-04-15 15:16:45.108 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0

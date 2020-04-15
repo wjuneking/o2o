@@ -16,7 +16,15 @@
         <!--配置视图解析器-->
         <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
             <property name="prefix" value="/WEB-INF/"></property>
-            <property name="suffix" value=".jsp"></property>
+            <property name="suffix" value=".html"></property>
+        </bean>
+
+        <!--文件上传解析器-->
+        <bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+                <property name="defaultEncoding" value="utf-8"></property>
+                <property name="maxUploadSize" value="20971520"></property>
+                <property name="maxInMemorySize" value="20971520"></property>
         </bean>
 
         <!--静态资源过滤器-->

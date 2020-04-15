@@ -82,4 +82,44 @@ public class ShopTest  extends BaseTest {
         int res=shopDao.updateShop(shop);
         System.out.println("res:"+res);
     }
+
+    @Test
+    public void TestqueryShopbyid(){
+        Shop shop=shopDao.queryById(1L);
+        System.out.println(shop.getArea().getAreaId());
+        System.out.println(shop.getArea().getAreaName());
+        System.out.println(shop.getShopCategory().getShopCategoryId());
+        System.out.println(shop.getShopCategory().getShopCategoryName());
+
+    }
+
+    @Test
+    public void TestqueryShopCount(){
+        Shop shop=shopDao.queryById(1L);
+        System.out.println(shop.getArea().getAreaId());
+        System.out.println(shop.getArea().getAreaName());
+        System.out.println(shop.getShopCategory().getShopCategoryId());
+        System.out.println(shop.getShopCategory().getShopCategoryName());
+
+    }
+
+    @Test
+    public void TestqueryShopList(){
+        Shop shop=new Shop();
+        PersonInfo owner=new PersonInfo();
+        owner.setUserId(1L);
+        shop.setOwner(owner);
+
+        ShopCategory shopCategory=new ShopCategory();
+        shopCategory.setShopCategoryId(1L);
+        shop.setShopCategory(shopCategory);
+        shop.setEnableStatus(1);
+        shop.setShopName("商店");
+
+        List<Shop>shops=
+                shopDao.queryShopList(shop,0,3);
+        System.out.println(shops.size());
+        int count=shopDao.queryShopCount(shop);
+        System.out.println(count);
+    }
 }

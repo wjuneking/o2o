@@ -71,6 +71,9 @@ public class ShopExecution {
         this.shop = shop;
         this.shops = shops;
     }
+    public ShopExecution(){
+    }
+
     //操作失败的构造器
     public ShopExecution(ShopStateEnum stateEnum) {
         this.state=stateEnum.getState();
@@ -83,10 +86,22 @@ public class ShopExecution {
         this.shop=shop;
     }
     //操作成功的构造器（返回一个列表）
-    public ShopExecution(ShopStateEnum stateEnum, List<Shop> shops) {
+    public ShopExecution(ShopStateEnum stateEnum, List<Shop> shops,int count) {
         this.state=stateEnum.getState();
         this.stateInfo=stateEnum.getStateInfo();
         this.shops=shops;
+        this.count=count;
         this.count=shops.size();
+    }
+
+    @Override
+    public String toString() {
+        return "ShopExecution{" +
+                "state=" + state +
+                ", stateInfo='" + stateInfo + '\'' +
+                ", count=" + count +
+                ", shop=" + shop +
+                ", shops=" + shops +
+                '}';
     }
 }

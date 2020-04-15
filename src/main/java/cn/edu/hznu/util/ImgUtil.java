@@ -10,6 +10,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.UUID;
 
 /**
@@ -39,11 +41,11 @@ public class ImgUtil {
         return file;
     }
 
-    public static String generateThumbnail(File thumbnail, String targetAddr) {
+    public static String generateThumbnail(InputStream thumbnail,String fileName, String targetAddr) {
         // 获取不重复的随机名
         String realFileName = getRandomFileName();
         // 获取文件的扩展名如png,jpg等
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
         // 如果目标路径不存在，则自动创建
         makeDirPath(targetAddr);
         // 获取文件存储的相对路径(带文件名)
@@ -53,7 +55,7 @@ public class ImgUtil {
 
         // 调用Thumbnails生成带有水印的图片
         try {
-            Thumbnails.of(thumbnail).size(200,200)
+            Thumbnails.of(thumbnail).scale(1)
                     .watermark(Positions.BOTTOM_LEFT, ImageIO.read(new File("C:\\Users\\wjj\\IdeaProjects\\o2o\\src\\main\\resources\\watermark.jpg")),1f)
                     .outputQuality(1f).toFile(dest);
         } catch (IOException e) {
@@ -73,14 +75,31 @@ public class ImgUtil {
     }
 
     //获取扩展名
-    private static String getFileExtension(File thumbnail) {
-        String s=thumbnail.getName();
-        return s.substring(s.lastIndexOf("."));
+    private static String getFileExtension(String fileName) {
+
+        return fileName.substring(fileName.lastIndexOf("."));
     }
 
-    private static String getRandomFileName() {
+    public static String getRandomFileName() {
         return UUID.randomUUID().toString();
     }
 
+    /*
+    * 删除目录下文件
+    *
+    * */
+    public static void deleteFileOrPath(String path){
+        path=PathUtil.getImgBasePath()+path;
+        File file=new File(path);
+        if(file.exists()){
+            //是一个目录
+            if(file.isDirectory()) {
+                File[] files = file.listFiles();
+                for (int i = 0; i < files.length; i++)
+                    files[i].delete();
+            }
+            file.delete();
+        }
+    }
 
 }
