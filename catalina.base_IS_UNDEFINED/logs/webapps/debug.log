@@ -1,21 +1,6 @@
-2020-04-15 14:43:32.116 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_catrgory where product_category_id=? and shop_id=? 
-2020-04-15 14:44:33.360 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_catrgory where product_category_id=? and shop_id=? 
-2020-04-15 14:44:33.443 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 14:45:14.819 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
-2020-04-15 14:45:14.904 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 14:45:14.911 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 1
-2020-04-15 15:10:27.217 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
-2020-04-15 15:10:27.351 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 15:10:27.352 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
-2020-04-15 15:14:03.694 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
-2020-04-15 15:14:03.802 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 15:14:03.803 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
-2020-04-15 15:16:16.113 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
-2020-04-15 15:16:16.223 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 15:16:16.228 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
-2020-04-15 15:16:20.890 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
-2020-04-15 15:16:20.956 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 15:16:20.959 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
-2020-04-15 15:16:45.025 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
-2020-04-15 15:16:45.103 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 1(Long)
-2020-04-15 15:16:45.108 [main] DEBUG c.e.h.d.IProductCategoryDao.deleteProductCategory - <==    Updates: 0
+2020-05-28 14:01:00.340 [main] DEBUG cn.edu.hznu.dao.IProductDao.updateProduct - ==>  Preparing: UPDATE tb_product SET product_name=?, priority=?, last_edit_time=?, enable_status=?, point=? WHERE product_id = ? AND shop_id=? 
+2020-05-28 14:01:00.501 [main] DEBUG cn.edu.hznu.dao.IProductDao.updateProduct - ==> Parameters: 甘露(String), 10(Integer), 2020-05-28 14:00:59.645(Timestamp), 1(Integer), 20(Integer), 7(Long), 1(Long)
+2020-05-28 14:01:00.513 [main] DEBUG cn.edu.hznu.dao.IProductDao.updateProduct - <==    Updates: 1
+2020-05-28 14:23:05.704 [main] DEBUG cn.edu.hznu.dao.IProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, point, product_category_id, shop_id FROM tb_product WHERE shop_id = ? ORDER BY priority DESC LIMIT ?,?; 
+2020-05-28 14:23:05.798 [main] DEBUG cn.edu.hznu.dao.IProductDao.queryProductList - ==> Parameters: 17(Long), 0(Integer), 999(Integer)
+2020-05-28 14:23:05.830 [main] DEBUG cn.edu.hznu.dao.IProductDao.queryProductList - <==      Total: 0

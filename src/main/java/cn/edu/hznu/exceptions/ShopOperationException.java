@@ -1,7 +1,5 @@
 package cn.edu.hznu.exceptions;
 
-import jdk.internal.org.objectweb.asm.commons.SerialVersionUIDAdder;
-
 /**
  * Created by wjj on 2020/4/11
  */

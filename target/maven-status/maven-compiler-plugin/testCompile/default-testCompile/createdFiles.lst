@@ -1,0 +1,7 @@
+cn\edu\hznu\dao\ShopTest.class
+cn\edu\hznu\BaseTest.class
+cn\edu\hznu\dao\AreaTest.class
+cn\edu\hznu\dao\ShopCategoryTest.class
+cn\edu\hznu\service\AreaTest.class
+cn\edu\hznu\dao\ProductCategoryTest.class
+cn\edu\hznu\service\ShopServiceTest.class

@@ -154,7 +154,7 @@ public class ShopManagementController {
         return modelMap;
     }
 
-    //使用该方法实现注册店铺
+    //使用该方法实现修改店铺
     @RequestMapping(value = "/modifyshop")
     @ResponseBody
     private Map<String, Object> modifyshop(HttpServletRequest request) {
@@ -193,7 +193,7 @@ public class ShopManagementController {
             ShopExecution se = null;
             try {
                 if(shopImg==null)
-                    se = shopService.updateShop(shop, null, shopImg.getOriginalFilename());
+                    se = shopService.updateShop(shop, null, null);
                 else
                     se = shopService.updateShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
@@ -265,4 +265,5 @@ public class ShopManagementController {
         }
         return modelMap;
     }
+
 }
