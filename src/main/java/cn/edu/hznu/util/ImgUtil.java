@@ -19,8 +19,9 @@ import java.util.UUID;
  * Created by wjj on 2020/4/11
  */
 public class ImgUtil {
-    private static String basePath="C:/Users/wjj/IdeaProjects/o2o/src/main/resources";
-    private static Logger logger= LoggerFactory.getLogger(ImgUtil.class);
+//    private static String basePath="C:/Users/wjj/IdeaProjects/o2o/src/main/resources";
+   private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+   private static Logger logger= LoggerFactory.getLogger(ImgUtil.class);
 
     public static void main(String[] args) throws Exception {
         Thumbnails.of(new File("C:/Users/wjj/Desktop/Image/eva/Asuka/asuka.jpg")).scale(1f)
@@ -56,7 +57,7 @@ public class ImgUtil {
         // 调用Thumbnails生成带有水印的图片
         try {
             Thumbnails.of(thumbnail).scale(1)
-                    .watermark(Positions.BOTTOM_LEFT, ImageIO.read(new File("C:\\Users\\wjj\\IdeaProjects\\o2o\\src\\main\\resources\\watermark.jpg")),1f)
+                    .watermark(Positions.BOTTOM_LEFT, ImageIO.read(new File(basePath+"/watermark.jpg")),1f)
                     .outputQuality(1f).toFile(dest);
         } catch (IOException e) {
             logger.error(e.toString());

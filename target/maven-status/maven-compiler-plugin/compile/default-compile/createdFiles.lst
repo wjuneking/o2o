@@ -10,7 +10,6 @@ cn\edu\hznu\domain\HeadLine.class
 cn\edu\hznu\domain\Product.class
 cn\edu\hznu\domain\LocalAuth.class
 cn\edu\hznu\domain\WechatAuth.class
-cn\edu\hznu\service\impl\AreaAerviceImpl.class
 cn\edu\hznu\service\impl\ProductCategoryServiceImpl.class
 cn\edu\hznu\service\IProductCategoryService.class
 cn\edu\hznu\dao\IShopCategoryDao.class
