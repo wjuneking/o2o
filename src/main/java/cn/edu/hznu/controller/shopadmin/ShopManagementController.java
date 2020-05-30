@@ -1,11 +1,10 @@
 package cn.edu.hznu.controller.shopadmin;
 
 import cn.edu.hznu.dao.IAreaDao;
+import cn.edu.hznu.dao.IAuthDao;
 import cn.edu.hznu.dao.IShopCategoryDao;
-import cn.edu.hznu.domain.Area;
-import cn.edu.hznu.domain.PersonInfo;
-import cn.edu.hznu.domain.Shop;
-import cn.edu.hznu.domain.ShopCategory;
+import cn.edu.hznu.domain.*;
+import cn.edu.hznu.dto.ImageHolder;
 import cn.edu.hznu.dto.ShopExecution;
 import cn.edu.hznu.enums.ShopStateEnum;
 import cn.edu.hznu.exceptions.ShopOperationException;
@@ -45,6 +44,10 @@ public class ShopManagementController {
 
     @Autowired
     private IAreaService areaService;
+
+    @Autowired
+    private IAuthDao authdao;
+
 
     @Autowired
     private IShopCategoryService categoryService;
@@ -91,7 +94,7 @@ public class ShopManagementController {
             shop.setOwner(owner);
             ShopExecution se = null;
             try {
-                se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                se = shopService.addShop(shop,new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream()));
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     List<Shop>list=(List<Shop>)request.getSession().getAttribute("shopList");
@@ -193,9 +196,9 @@ public class ShopManagementController {
             ShopExecution se = null;
             try {
                 if(shopImg==null)
-                    se = shopService.updateShop(shop, null, null);
+                    se = shopService.updateShop(shop, null);
                 else
-                    se = shopService.updateShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                    se = shopService.updateShop(shop, new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream()));
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
                 } else {
@@ -214,16 +217,44 @@ public class ShopManagementController {
         }
     }
 
+    //使用该方法来实现登录
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    private Map<String, Object> Login(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        String username=HttpServletRequestUtil.getString(request,"username");
+        String password=HttpServletRequestUtil.getString(request,"password");
+        if(username==null||password==null){
+            modelMap.put("success",false);
+            modelMap.put("errMsg","用户名密码不能为空");
+        } else {
+            LocalAuth localAuth = new LocalAuth();
+            localAuth.setUsername(username);
+            localAuth.setPassword(password);
+            LocalAuth login = authdao.login(localAuth);
+            if(login!=null){
+                modelMap.put("success",true);
+               request.getSession().setAttribute("user",login);
+            } else {
+                modelMap.put("success",false);
+                modelMap.put("errMsg","没有该用户");
+            }
+        }
+        return modelMap;
+    }
     //获取店铺列表
     @RequestMapping("/getshoplist")
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request){
         Map<String, Object> modelMap = new HashMap<String, Object>();
         PersonInfo owner=new PersonInfo();
-        owner.setUserId(1L);
-        owner.setName("wjj");
-        request.getSession().setAttribute("user",owner);
-        owner=(PersonInfo)request.getSession().getAttribute("user");
+        LocalAuth localAuth =(LocalAuth) request.getSession().getAttribute("user");;
+        owner.setUserId(localAuth.getLocalAuthId());
+        owner.setName(localAuth.getUsername());
+//        owner.setUserId(1L);
+//        owner.setName("wjj");
+//        request.getSession().setAttribute("user",owner);
+//        owner=(PersonInfo)request.getSession().getAttribute("user");
 
         try {
             Shop shop=new Shop();

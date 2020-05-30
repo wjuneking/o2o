@@ -6,7 +6,7 @@ $(function() {
     // 获取当前店铺设定的商品类别列表的URL
     var categoryUrl = '/o2o/shopadmin/getproductcategorylist';
     // 更新商品信息的URL
-    var productPostUrl = '/o2o/shopadmin/modifyproduct';
+    var productPostUrl = '/o2o/shopadmin/modifyproduct?productId=' + productId;
     // 由于商品添加和编辑使用的是同一个页面，
     // 该标识符用来标明本次是添加还是编辑操作
     var isEdit = false;
@@ -61,7 +61,7 @@ $(function() {
     function getCategory() {
         $.getJSON(categoryUrl, function(data) {
             if (data.success) {
-                var productCategoryList = data.data;
+                var productCategoryList = data.productlist;
                 var optionHtml = '';
                 productCategoryList.map(function(item, index) {
                     optionHtml += '<option data-value="'
@@ -126,6 +126,7 @@ $(function() {
             }
             formData.append("verifyCodeActual", verifyCodeActual);
             // 将数据提交至后台处理相关操作
+            console.log(productPostUrl);
             $.ajax({
                 url : productPostUrl,
                 type : 'POST',

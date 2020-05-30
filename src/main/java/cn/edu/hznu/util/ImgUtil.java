@@ -1,6 +1,7 @@
 package cn.edu.hznu.util;
 
 
+import cn.edu.hznu.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import org.slf4j.Logger;
@@ -19,8 +20,8 @@ import java.util.UUID;
  * Created by wjj on 2020/4/11
  */
 public class ImgUtil {
-//    private static String basePath="C:/Users/wjj/IdeaProjects/o2o/src/main/resources";
-   private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+  private static String basePath="C:/Users/wjj/IdeaProjects/o2o/src/main/resources";
+  // private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
    private static Logger logger= LoggerFactory.getLogger(ImgUtil.class);
 
     public static void main(String[] args) throws Exception {
@@ -42,11 +43,11 @@ public class ImgUtil {
         return file;
     }
 
-    public static String generateThumbnail(InputStream thumbnail,String fileName, String targetAddr) {
+    public static String generateThumbnail(ImageHolder imageHolder, String targetAddr) {
         // 获取不重复的随机名
         String realFileName = getRandomFileName();
         // 获取文件的扩展名如png,jpg等
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(imageHolder.getImgname());
         // 如果目标路径不存在，则自动创建
         makeDirPath(targetAddr);
         // 获取文件存储的相对路径(带文件名)
@@ -56,7 +57,7 @@ public class ImgUtil {
 
         // 调用Thumbnails生成带有水印的图片
         try {
-            Thumbnails.of(thumbnail).scale(1)
+            Thumbnails.of(imageHolder.getImg()).scale(1)
                     .watermark(Positions.BOTTOM_LEFT, ImageIO.read(new File(basePath+"/watermark.jpg")),1f)
                     .outputQuality(1f).toFile(dest);
         } catch (IOException e) {

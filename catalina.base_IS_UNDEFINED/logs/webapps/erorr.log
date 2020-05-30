@@ -1,3 +1,15 @@
 2020-04-11 22:26:24.821 [main] ERROR cn.edu.hznu.util.ImgUtil - java.io.FileNotFoundException: C:\Users\wjj\Desktop\ImageC:\Users\wjj\Desktop\Image\2\f1f3730f-f9f0-43c3-bacf-bd5704855b67.jpg (文件名、目录名或卷标语法不正确。)
 2020-04-11 22:27:49.750 [main] ERROR cn.edu.hznu.util.ImgUtil - java.io.FileNotFoundException: C:\Users\wjj\Desktop\ImageC:\Users\wjj\Desktop\Image\3\3da96cbc-62c1-459d-9857-79d595406bb1.jpg (文件名、目录名或卷标语法不正确。)
 2020-04-11 22:28:45.721 [main] ERROR cn.edu.hznu.util.ImgUtil - java.io.FileNotFoundException: C:\Users\wjj\Desktop\ImageC:\Users\wjj\Desktop\Image\4\16d8adb3-6eff-4186-adf9-c75a9ef972c5.jpg (文件名、目录名或卷标语法不正确。)
+2020-05-30 18:11:25.147 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:11:42.669 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:16:03.637 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:16:38.582 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:17:03.146 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:17:52.205 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:17:52.315 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:17:52.322 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:21:40.235 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:21:40.333 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:21:40.342 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!
+2020-05-30 18:26:29.104 [main] ERROR cn.edu.hznu.util.ImgUtil - javax.imageio.IIOException: Can't read input file!

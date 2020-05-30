@@ -5,6 +5,7 @@ import cn.edu.hznu.domain.Area;
 import cn.edu.hznu.domain.PersonInfo;
 import cn.edu.hznu.domain.Shop;
 import cn.edu.hznu.domain.ShopCategory;
+import cn.edu.hznu.dto.ImageHolder;
 import cn.edu.hznu.dto.ShopExecution;
 import cn.edu.hznu.enums.ShopStateEnum;
 import org.junit.After;
@@ -58,7 +59,7 @@ public class ShopServiceTest extends BaseTest {
         shop.setAdvice("审核中");
         File img=new File("C:\\Users\\wjj\\Desktop\\Image\\eva\\Asuka\\asuka.jpg");
         InputStream in=new FileInputStream(img);
-        ShopExecution shopExecution =shopService.addShop(shop,in,img.getName());
+        ShopExecution shopExecution =shopService.addShop(shop,new ImageHolder(img.getName(),in));
         System.out.println("res:"+shopExecution.getState());
     }
     @Test
@@ -67,7 +68,7 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("修改后商店");
         File img=new File("C:\\Users\\wjj\\Desktop\\Image\\eva\\Asuka\\as.jpg");
         InputStream in=new FileInputStream(img);
-        ShopExecution shopExecution =shopService.updateShop(shop,in,img.getName());
+        ShopExecution shopExecution =shopService.updateShop(shop,new ImageHolder(img.getName(),in));
         System.out.println("res:"+shopExecution);
     }
 

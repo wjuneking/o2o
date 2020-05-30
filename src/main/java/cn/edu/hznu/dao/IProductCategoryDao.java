@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface IProductCategoryDao {
     /*
-    * 根据店铺id查询获得对应的店铺属性
+    * 根据店铺id查询获得对应的店铺商品类别
     * */
     List<ProductCategory> findAllProductCategory(Long shopId);
 

@@ -20,7 +20,7 @@ public class ProductTest extends BaseTest {
     public void TestqueryProductList() {
         Product p = new Product();
         Shop shop = new Shop();
-        shop.setShopId(17L);
+        shop.setShopId(20L);
         p.setShop(shop);
         List<Product>products=dao.queryProductList(p, 0, 999);
         for (Product product : products) {

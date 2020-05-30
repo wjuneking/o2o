@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.imooc.o2o.dao.ProductImgDao">
+<mapper namespace="cn.edu.hznu.dao.IProductImgDao">
     <select id="queryProductImgList" resultType="cn.edu.hznu.domain.ProductImg">
 		SELECT
 		product_img_id,
@@ -33,7 +33,7 @@
         </foreach>
     </insert>
 
-    <delete id="deleteProductImgByProductId">
+    <delete id="deleteProductImg">
         <!-- 具体的sql -->
         DELETE FROM
         tb_product_img

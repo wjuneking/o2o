@@ -51,6 +51,7 @@ public class ProductCategoryManagementController {
             request.getSession().setAttribute("currentShop",currentShop);
         }
         List<ProductCategory>lists=productCategoryService.findAllProductCategory(shopId);
+        modelMap.put("success",true);
         modelMap.put("productlist",lists);
         return modelMap;
     }

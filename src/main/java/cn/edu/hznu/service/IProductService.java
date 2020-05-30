@@ -1,8 +1,11 @@
 package cn.edu.hznu.service;
 
 import cn.edu.hznu.domain.Product;
+import cn.edu.hznu.dto.ImageHolder;
+import cn.edu.hznu.dto.ProductExecution;
 import org.apache.ibatis.annotations.Param;
 
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -15,9 +18,9 @@ public interface IProductService {
 
     Product queryProductById(long productId);
 
-    int insertProduct(Product product);
+    ProductExecution insertProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imglist);
 
-    int updateProduct(Product product);
+    ProductExecution updateProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imglist);
 
 }
 
