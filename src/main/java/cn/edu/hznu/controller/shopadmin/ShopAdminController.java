@@ -15,8 +15,13 @@ public class ShopAdminController {
     }
 
     @RequestMapping("/index")
-    public String shoplist() {
+    public String index() {
         return "html/shop/index";
+    }
+
+    @RequestMapping("/shoplist")
+    public String shoplist() {
+        return "html/shop/shoplist";
     }
 
 
@@ -42,5 +47,10 @@ public class ShopAdminController {
         return "html/shop/productoperation";
     }
 
+
+    @RequestMapping("/preview")
+    public String preview() {
+        return "html/shop/preview";
+    }
 
 }

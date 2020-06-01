@@ -220,38 +220,6 @@ public class ShopManagementController {
         }
     }
 
-//    //使用该方法来实现登录
-//    @RequestMapping(value = "/login")
-//    @ResponseBody
-//    private Map<String, Object> Login(HttpServletRequest request, HttpServletResponse response) {
-//        Map<String, Object> modelMap = new HashMap<String, Object>();
-//        String username=HttpServletRequestUtil.getString(request,"username");
-//        String password=HttpServletRequestUtil.getString(request,"password");
-//        if(username==null||password==null){
-//            modelMap.put("success",false);
-//            modelMap.put("errMsg","用户名密码不能为空");
-//        } else {
-//            LocalAuth localAuth = new LocalAuth();
-//            localAuth.setUsername(username);
-//            localAuth.setPassword(password);
-//            LocalAuth login = authService.login(localAuth);
-//            if(login!=null){
-//                try {
-//                    modelMap.put("success",true);
-//                    request.getSession().setAttribute("user",login);
-//
-//                } catch (Exception e) {
-//                    modelMap.put("success",false);
-//                    modelMap.put("errMsg",e.toString());
-//                }
-//            } else {
-//                modelMap.put("success",false);
-//                modelMap.put("errMsg","没有该用户");
-//            }
-//        }
-//        return modelMap;
-//    }
-
     //使用该方法来实现登录
     @RequestMapping(value = "/login")
     private String Login(HttpServletRequest request) {

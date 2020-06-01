@@ -79,7 +79,7 @@ $(function() {
                         e.currentTarget.dataset.status);
                 } else if (target.hasClass('preview')) {
                     // 如果有class preview则去前台展示系统该商品详情页预览商品情况
-                    window.location.href = '/o2o/frontend/productdetail?productId='
+                    window.location.href = '/o2o/shopadmin/preview?productId='
                         + e.currentTarget.dataset.id;
                 }
             });

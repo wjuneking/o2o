@@ -1,6 +1,5 @@
 $(function () {
     var shopId = getQueryString('shopId');
-    console.log(shopId);
     getlist();
     function getlist() {
         $.ajax({
