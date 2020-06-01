@@ -20,8 +20,8 @@ import java.util.UUID;
  * Created by wjj on 2020/4/11
  */
 public class ImgUtil {
-  private static String basePath="C:/Users/wjj/IdeaProjects/o2o/src/main/resources";
-  // private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+  //private static String basePath="C:/Users/wjj/IdeaProjects/o2o/src/main/resources";
+   private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
    private static Logger logger= LoggerFactory.getLogger(ImgUtil.class);
 
     public static void main(String[] args) throws Exception {

@@ -14,9 +14,9 @@ public class ShopAdminController {
         return "html/shop/shopoperation";
     }
 
-    @RequestMapping("/shoplist")
+    @RequestMapping("/index")
     public String shoplist() {
-        return "html/shop/shoplist";
+        return "html/shop/index";
     }
 
 

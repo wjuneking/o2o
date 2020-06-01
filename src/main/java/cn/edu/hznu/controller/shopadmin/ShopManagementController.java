@@ -9,6 +9,7 @@ import cn.edu.hznu.dto.ShopExecution;
 import cn.edu.hznu.enums.ShopStateEnum;
 import cn.edu.hznu.exceptions.ShopOperationException;
 import cn.edu.hznu.service.IAreaService;
+import cn.edu.hznu.service.IAuthService;
 import cn.edu.hznu.service.IShopCategoryService;
 import cn.edu.hznu.service.IShopService;
 import cn.edu.hznu.util.HttpServletRequestUtil;
@@ -26,7 +27,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +49,7 @@ public class ShopManagementController {
     private IAreaService areaService;
 
     @Autowired
-    private IAuthDao authdao;
+    private IAuthService authService;
 
 
     @Autowired
@@ -217,35 +220,62 @@ public class ShopManagementController {
         }
     }
 
+//    //使用该方法来实现登录
+//    @RequestMapping(value = "/login")
+//    @ResponseBody
+//    private Map<String, Object> Login(HttpServletRequest request, HttpServletResponse response) {
+//        Map<String, Object> modelMap = new HashMap<String, Object>();
+//        String username=HttpServletRequestUtil.getString(request,"username");
+//        String password=HttpServletRequestUtil.getString(request,"password");
+//        if(username==null||password==null){
+//            modelMap.put("success",false);
+//            modelMap.put("errMsg","用户名密码不能为空");
+//        } else {
+//            LocalAuth localAuth = new LocalAuth();
+//            localAuth.setUsername(username);
+//            localAuth.setPassword(password);
+//            LocalAuth login = authService.login(localAuth);
+//            if(login!=null){
+//                try {
+//                    modelMap.put("success",true);
+//                    request.getSession().setAttribute("user",login);
+//
+//                } catch (Exception e) {
+//                    modelMap.put("success",false);
+//                    modelMap.put("errMsg",e.toString());
+//                }
+//            } else {
+//                modelMap.put("success",false);
+//                modelMap.put("errMsg","没有该用户");
+//            }
+//        }
+//        return modelMap;
+//    }
+
     //使用该方法来实现登录
     @RequestMapping(value = "/login")
-    @ResponseBody
-    private Map<String, Object> Login(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<String, Object>();
+    private String Login(HttpServletRequest request) {
         String username=HttpServletRequestUtil.getString(request,"username");
         String password=HttpServletRequestUtil.getString(request,"password");
-        if(username==null||password==null){
-            modelMap.put("success",false);
-            modelMap.put("errMsg","用户名密码不能为空");
-        } else {
             LocalAuth localAuth = new LocalAuth();
             localAuth.setUsername(username);
             localAuth.setPassword(password);
-            LocalAuth login = authdao.login(localAuth);
+            LocalAuth login = authService.login(localAuth);
             if(login!=null){
-                modelMap.put("success",true);
-               request.getSession().setAttribute("user",login);
+                request.getSession().setAttribute("user",login);
+                System.out.println("sessionId:"+request.getSession().getId());
+                return "html/shop/shoplist";
             } else {
-                modelMap.put("success",false);
-                modelMap.put("errMsg","没有该用户");
+                return "html/shop/index";
             }
-        }
-        return modelMap;
+
+
     }
     //获取店铺列表
     @RequestMapping("/getshoplist")
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request){
+        System.out.println("sessionId:"+request.getSession().getId());
         Map<String, Object> modelMap = new HashMap<String, Object>();
         PersonInfo owner=new PersonInfo();
         LocalAuth localAuth =(LocalAuth) request.getSession().getAttribute("user");;
@@ -267,7 +297,7 @@ public class ShopManagementController {
             modelMap.put("success",false);
             modelMap.put("errMsg",e.getMessage());
         }
-
+        System.out.println("sessionid:"+request.getSession().getId());
         return  modelMap;
     }
 

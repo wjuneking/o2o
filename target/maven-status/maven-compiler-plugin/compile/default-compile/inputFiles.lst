@@ -22,6 +22,7 @@ C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dao\IProductDao.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dao\IAuthDao.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dao\IProductImgDao.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\domain\ProductCategory.java
+C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dto\ImageHolder.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\service\IShopService.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dao\IAreaDao.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dto\ProductCategoryExecution.java
@@ -34,6 +35,8 @@ C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\controller\superadmin\Ar
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dto\ShopExecution.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\service\IShopCategoryService.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\domain\PersonInfo.java
+C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\dto\ProductExecution.java
+C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\enums\ProductStateEnum.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\service\impl\ShopServiceImpl.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\domain\Product.java
 C:\Users\wjj\IdeaProjects\o2o\src\main\java\cn\edu\hznu\domain\Area.java
