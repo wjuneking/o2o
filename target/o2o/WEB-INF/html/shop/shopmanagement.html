@@ -8,52 +8,83 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet"
-          href="../resources/css/common/sm.min.css">
-    <link rel="stylesheet"
-          href="../resources/css/common/sm-extend.min.css">
+    <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
     <style>
-        .mb {
-            margin-bottom: .5rem;
+        body{
+            text-align: left;
+            background-color: #fff;
         }
+        .header{
+            text-align: center;
+            background-color: skyblue;
+            height: 40px;
+            color: #fff;
+            padding-top: 10px;
+        }
+        p{
+            margin: 15px 0 10px 10px;
+            font-size: 20px;
+        }
+        .ll{
+            color: #000;
+        }
+        hr{
+            width: 100%;
+            margin-top: 15px;
+            border: rgb(228, 226, 226) 1px solid;
+        }
+        img{margin-left: 10px;}
     </style>
 </head>
-<body>
-<header class="bar bar-nav">
-    <h1 class="title">商店管理</h1>
-</header>
-<div class="content">
-    <div class="content-block">
-        <div class="row">
-            <div class="col-50 mb">
-                <a id="shopInfo" href="/o2o/shopadmin/shopoperation"
-                   class="button button-big button-fill">商铺信息</a>
-            </div>
-            <div class="col-50 mb">
-                <a href="/o2o/shopadmin/productmanagement"
-                   class="button button-big button-fill">商品管理</a>
-            </div>
-            <div class="col-50 mb">
-                <a href="/o2o/shopadmin/productcategorymanagement"
-                   class="button button-big button-fill">类别管理</a>
-            </div>
-            <div class="col-100 mb">
-                <a href="/o2o/shopadmin/shoplist"
-                   class="button button-big button-fill button-danger">返回</a>
-            </div>
+<body><body>
+<div class="header">
+    <h1>店铺列表</h1>
+</div>
+<div class="">
+    <a  id="shopInfo" class="ui-row" href="/o2o/shopadmin/shopoperation">
+        <div class="ui-col ui-col-20" style="padding: 10px;">
+            <img src="../resources/img/information.png" alt="" width="40">
         </div>
-    </div>
+        <div class="ui-col ui-col-80 ll">
+            <p>商铺信息</p>
+            <hr>
+        </div>
+    </a>
+    <a class="ui-row" href="/o2o/shopadmin/productmanagement">
+        <div class="ui-col ui-col-20" style="padding: 10px;">
+            <img src="../resources/img/thing.png" alt="" width="40">
+        </div>
+        <div class="ui-col ui-col-80 ll">
+            <p>商品管理</p>
+            <hr>
+        </div>
+    </a>
+    <a class="ui-row" href="/o2o/shopadmin/productcategorymanagement">
+        <div class="ui-col ui-col-20" style="padding: 10px;">
+            <img src="../resources/img/class.png" alt="" width="40">
+        </div>
+        <div class="ui-col ui-col-80 ll">
+            <p>类别管理</p>
+            <hr>
+        </div>
+    </a>
+    <a class="ui-row" href="/o2o/shopadmin/frame">
+        <div class="ui-col ui-col-20" style="padding: 10px;">
+            <img src="../resources/img/return.png" alt="" width="40">
+        </div>
+        <div class="ui-col ui-col-80 ll">
+            <p>返回列表</p>
+            <hr>
+        </div>
+    </a>
+
+
 </div>
 
-<script type='text/javascript'
-        src='../resources/js/common/zepto.min.js' charset='utf-8'></script>
-<script type='text/javascript'
-        src='../resources/js/common/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript'
-        src='../resources/js/common/sm-extend.min.js' charset='utf-8'></script>
-<script type='text/javascript'
-        src='../resources/js/common/common.js' charset='utf-8'></script>
+<script src="../resources/js/common/jquery-3.3.1.min.js"></script>
 <script type='text/javascript' src='../resources/js/shop/shopmanagement.js'
+        charset='utf-8'></script>
+<script type='text/javascript' src='../resources/js/common/common.js'
         charset='utf-8'></script>
 </body>
 </html>

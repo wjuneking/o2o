@@ -15,16 +15,39 @@ public class ShopAdminController {
     }
 
     @RequestMapping("/index")
-    public String shoplist() {
+    public String index() {
         return "html/shop/index";
     }
 
+    @RequestMapping("/shoplist")
+    public String shoplist() {
+        return "html/shop/shoplist";
+    }
 
     @RequestMapping("/shopmanagement")
     public String shopmanagement() {
         return "html/shop/shopmanagement";
     }
 
+    @RequestMapping("/frame")
+    public String frame() {
+        return "html/shop/frame";
+    }
+
+    @RequestMapping("/preview")
+    public String preview() {
+        return "html/shop/preview";
+    }
+
+    @RequestMapping("/register")
+    public String register() {
+        return "html/shop/register";
+    }
+
+    @RequestMapping("/home")
+    public String home() {
+        return "html/shop/home";
+    }
 
     @RequestMapping("/productcategorymanagement")
     public String productcategorymanagement() {

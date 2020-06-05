@@ -20,11 +20,20 @@ $(function() {
     function handleList(data) {
         var html = '';
         data.map(function(item, index) {
-            html += '<div class="row row-shop"><div class="col-40">'
-                + item.shopName + '</div><div class="col-40">'
+            html +='<span class="ui-row"><div class="ui-col ui-col-25"><img src="'
+                +item.shopImg+'"></div>'
+                +'<div class="ui-col ui-col-25"  id="sstore">'
+                + item.shopName + '</div><div class="ui-col ui-col-25"  id="sstore"'
                 + shopStatus(item.enableStatus)
-                + '</div><div class="col-20">'
-                + goShop(item.enableStatus, item.shopId) + '</div></div>';
+                + '</div><div class="ui-col ui-col-25"  id="sstore">'
+                + goShop(item.enableStatus, item.shopId) + '</div></span>';
+
+
+            /*html += '<div class="ui-row"><div class="ui-col ui-col-33">'
+                + item.shopName + '</div><div class="ui-col ui-col-33">'
+                + shopStatus(item.enableStatus)
+                + '</div><div class="ui-col ui-col-33">'
+                + goShop(item.enableStatus, item.shopId) + '</div></div>';*/
 
         });
         $('.shop-wrap').html(html);
@@ -32,17 +41,17 @@ $(function() {
 
     function shopStatus(status) {
         if (status == 0) {
-            return '审核中';
+            return ' style="color:rgb(235, 235, 235);">审核中';
         } else if (status == -1) {
-            return '店铺非法';
+            return ' style="color:#f00;">店铺非法';
         } else if (status == 1) {
-            return '审核通过';
+            return ' style="color:rgb(5, 253, 79);">已通过';
         }
     }
 
     function goShop(status, id) {
         if (status == 1) {
-            return '<a href="/o2o/shopadmin/shopmanagement?shopId=' + id
+            return '<a target="_parent" href="/o2o/shopadmin/shopmanagement?shopId=' + id
                 + '">进入</a>';
         } else {
             return '';

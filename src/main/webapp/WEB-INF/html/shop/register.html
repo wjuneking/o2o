@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号注册</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/css/shop/register.css" >
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../resources/js/common/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    #userxx{
+        background-color:rgba(0,0,0,0);
+        border: none;
+        font-size: 15px;
+        margin-top: -10px;
+        margin-left: -10px;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="form row">
+         <h3 class="form-title text-center">账号注册</h3>
+         <hr style="width: 83%;">
+         <div class="input-group col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <span class="input-group-addon" style="background-color: #6A6AFF;color: #FFF;">账号</span>
+            <input type="text" class="form-control" id="number" placeholder="请输入账号">
+        </div>
+        <br>
+ 		<div class="input-group col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <span class="input-group-addon" style="background-color: #6A6AFF;color: #FFF;">姓名</span>
+            <input type="text" class="form-control" id="name" placeholder="请输入姓名">
+        </div>
+        <br>
+        <div class="input-group col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <span class="input-group-addon" style="background-color: #6A6AFF;color: #FFF;">密码</span>
+            <input type="password" class="form-control" id="psd1" placeholder="请输入密码">
+        </div>
+        <br>
+        <div class="input-group col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+            <span class="input-group-addon" style="background-color: #6A6AFF;color: #FFF;">密码</span>
+            <input type="password" class="form-control" id="psd2" placeholder="请输入密码">
+        </div>
+
+        <div class="checkbox  col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="margin-left: 17px;">
+            <label>
+              <input type="checkbox" id="ck"><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="userxx">
+                接受用户协议
+            </button>
+            </label>
+        </div>
+        <div class=" col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-4 col-xs-offset-1" style="margin-bottom: 20px;" >
+            <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="width: 100%; font-size: 1.25em" id="sure">确定</button>-->
+            <button class="btn btn-primary btn-lg" style="width: 100px;" id="sure">注册</button>
+        </div>
+        <div class=" col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-4 col-xs-offset-1" style="margin-bottom: 20px;" >
+            <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="width: 100%; font-size: 1.25em" id="sure">确定</button>-->
+            <button class="btn btn-primary btn-lg" style="width: 100px;" id="return">返回</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background: rgba(255,255,255,0.8);">
+            <div class="modal-header" style="text-align: center;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" >SS用户协议</h4>
+            </div>
+            <div class="modal-body">
+                <p>我们重视用户的隐私。您在使用我们的服务时，我们可能会收集和使用您的相关信息。我们希望通过本《隐私政策》
+                    向您说明，在使用我们的服务时，我们如何收集、使用、储存和分享这些信息，以及我们为您提供的访问、更新、
+                    控制和保护这些信息的方式。本《隐私政策》与您所使用的服务息息相关，希望您仔细阅读，在需要时，按照本
+                    《隐私政策》的指引，作出您认为适当的选择。本《隐私政策》中涉及的相关技术词汇，我们尽量以简明扼要的
+                    表述，并提供进一步说明的链接，以便您的理解。
+                    您使用或继续使用我们的服务，即意味着同意我们按照本《隐私政策》收集、使用、储存和分享您的相关信息。
+                    如对本《隐私政策》或相关事宜有任何问题，请通过yeyuanshen@128xy.com与我们联系。
+                    我们可能收集的信息
+                    我们提供服务时，可能会收集、储存和使用下列与您有关的信息。如果您不提供相关信息，可能无法享受我们提供的某些服务，或者无法达到相关服务拟达到的效果。
+                </p>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+ <script>
+ 	function valPass(psd){
+ 		regx=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/;
+ 		return regx.test(psd);
+ 	}
+ 	function check(){
+ 		var name = $("#name").val();
+ 		var psd1 = $("#psd1").val();
+ 		var psd2 = $("#psd2").val();
+ 		var address = $("#address").val();
+
+ 		if(name==""||name.length<2){
+ 			alert("用户名长度过短!")
+ 			return false;
+ 		}
+ 		if(!valPass(psd1)){
+ 			alert("密码必须包含大小英文字母和数字");
+ 			return false;
+ 		}
+ 		if(psd1!=psd2){
+ 			alert("密码二次值不同");
+ 			return false;
+ 		}
+ 		return true;
+ 	}
+ 	function init(){
+ 		$("#sure").click(function(){
+ 			var val = check();
+			if(val){
+                if($("#ck").prop("checked")){}
+                else
+                alert("请勾选用户协议");
+            }
+		});
+        $("#return").click(function(){
+            window.location.href = "/o2o/shopadmin/index";
+        })
+ 	}
+    function btnClick(){
+        alert('提交成功');
+        window.location.href = "/o2o/shopadmin/index";
+    }
+ 	$(document).ready(init);
+</script>
+</body>
+</html>
