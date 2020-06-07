@@ -37,7 +37,7 @@ $(function () {
         $('.content-block').html(html);
 
         var desc = '';
-        desc += data.desc;
+        desc += data.productDesc;
         $('.describe').html(desc);
 
 

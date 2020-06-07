@@ -25,7 +25,7 @@ public class ImgUtil {
    private static Logger logger= LoggerFactory.getLogger(ImgUtil.class);
 
     public static void main(String[] args) throws Exception {
-        Thumbnails.of(new File("C:/Users/wjj/Desktop/Image/eva/Asuka/asuka.jpg")).scale(1f)
+        Thumbnails.of(new File("C:/Users/wjj/Desktop/Image/eva/Asuka/asuka.jpg")).size(200,200)
                 .watermark(Positions.BOTTOM_LEFT, ImageIO.read(new File("C:\\Users\\wjj\\IdeaProjects\\o2o\\src\\main\\resources\\watermark.jpg")),1f)
         .outputQuality(1f).toFile("C:/Users/wjj/Desktop/Image/eva/Asuka/asukanew.jpg");
     }

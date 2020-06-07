@@ -34,6 +34,11 @@ public class ShopAdminController {
         return "html/shop/frame";
     }
 
+    @RequestMapping("/mine")
+    public String mine() {
+        return "html/shop/mine";
+    }
+
     @RequestMapping("/preview")
     public String preview() {
         return "html/shop/preview";

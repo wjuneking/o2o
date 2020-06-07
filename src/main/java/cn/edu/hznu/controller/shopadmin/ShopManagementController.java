@@ -1,5 +1,6 @@
 package cn.edu.hznu.controller.shopadmin;
 
+import cn.edu.hznu.controller.superadmin.AreaController;
 import cn.edu.hznu.dao.IAreaDao;
 import cn.edu.hznu.dao.IAuthDao;
 import cn.edu.hznu.dao.IShopCategoryDao;
@@ -18,6 +19,8 @@ import cn.edu.hznu.util.codeUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jdk.nashorn.internal.runtime.ECMAException;
 import jdk.nashorn.internal.runtime.UserAccessorProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +58,8 @@ public class ShopManagementController {
     @Autowired
     private IShopCategoryService categoryService;
 
+    Logger logger= LoggerFactory.getLogger(ShopManagementController.class);
+
     //使用该方法实现注册店铺
     @RequestMapping(value = "/registershop")
     @ResponseBody
@@ -91,12 +96,18 @@ public class ShopManagementController {
         }
         // 2.注册店铺
         if (shop != null && shopImg != null) {
-            PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
-            //PersonInfo owner = new PersonInfo();
-            owner.setUserId(1L);
-            shop.setOwner(owner);
-            ShopExecution se = null;
+
             try {
+                PersonInfo owner=new PersonInfo();
+                LocalAuth localAuth =(LocalAuth) request.getSession().getAttribute("user");
+                if(localAuth==null){
+                    logger.info("没有登录的用户");
+                    throw new RuntimeException("没有登录的用户");
+                }
+                owner.setUserId(localAuth.getLocalAuthId());
+                owner.setName(localAuth.getUsername());
+                shop.setOwner(owner);
+                ShopExecution se = null;
                 se = shopService.addShop(shop,new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream()));
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
@@ -237,25 +248,40 @@ public class ShopManagementController {
             } else {
                 return "redirect:/shopadmin/index";
             }
-
-
     }
+
+    //获取店铺列表
+    @RequestMapping("/mineinfo")
+    @ResponseBody
+    private Map<String, Object> getmine(HttpServletRequest request){
+        logger.info("sessionId:"+request.getSession().getId());
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        PersonInfo owner=new PersonInfo();
+        LocalAuth localAuth =(LocalAuth) request.getSession().getAttribute("user");
+        if(localAuth!=null){
+         modelMap.put("success",true);
+         modelMap.put("info",localAuth);
+        } else {
+            modelMap.put("success",false);
+        }
+        return modelMap;
+    }
+
     //获取店铺列表
     @RequestMapping("/getshoplist")
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request){
-        System.out.println("sessionId:"+request.getSession().getId());
+        logger.info("sessionId:"+request.getSession().getId());
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        PersonInfo owner=new PersonInfo();
-        LocalAuth localAuth =(LocalAuth) request.getSession().getAttribute("user");;
-        owner.setUserId(localAuth.getLocalAuthId());
-        owner.setName(localAuth.getUsername());
-//        owner.setUserId(1L);
-//        owner.setName("wjj");
-//        request.getSession().setAttribute("user",owner);
-//        owner=(PersonInfo)request.getSession().getAttribute("user");
-
         try {
+            PersonInfo owner=new PersonInfo();
+            LocalAuth localAuth =(LocalAuth) request.getSession().getAttribute("user");
+            if(localAuth==null){
+                logger.info("没有登录的用户");
+                throw new RuntimeException("没有登录的用户");
+            }
+            owner.setUserId(localAuth.getLocalAuthId());
+            owner.setName(localAuth.getUsername());
             Shop shop=new Shop();
             shop.setOwner(owner);
             ShopExecution se=shopService.getShopList(shop,0,100);

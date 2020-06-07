@@ -18,6 +18,6 @@ public class AuthTest extends BaseTest {
         localAuth.setUsername("wjj");
         localAuth.setPassword("199945");
         LocalAuth login = dao.login(localAuth);
-        System.out.println(login );
+        System.out.println(login);
     }
 }
