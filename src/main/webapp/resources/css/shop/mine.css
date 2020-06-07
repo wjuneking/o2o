@@ -24,8 +24,27 @@ body{
 	color:#666
 }
 
-li{
-	list-style:none
+#parent >li> span{background: #FFFFFF;display: block;width: 200px;border-bottom:1px solid #ECEEF2;}
+li {line-height: 40px;display: block;}
+li  p{
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid#2f2f2f;
+
+}
+li>ul{display: none;}
+li>ul>li{border-bottom: 1px solid #DEDEDE;width: 199px;margin-left: 20px;}
+#parent span:hover + ul{display: block;}
+#parent span:hover >p{
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid#2f2f2f;
 }
 a{color:#666}
 
@@ -92,16 +111,6 @@ p{
 	-webkit-flex-direction:column;
 	-ms-flex-direction:column;
 	flex-direction:column
-}
-
-.juc-txt p{
-	text-align:left;
-	width: 50%
-}
-.juc-txt img{
-	padding-top: 18px;
-	width:50%;
-	height:auto;
 }
 
 .jui-navBar{

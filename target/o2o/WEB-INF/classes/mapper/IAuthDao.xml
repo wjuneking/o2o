@@ -12,8 +12,9 @@
             <result column="email" property="email"></result>
             <result column="gender" property="gender"></result>
             <result column="name" property="name"></result>
-
-
+            <result column="enable_status" property="enableStatus"></result>
+            <result column="user_type" property="userType"></result>
+            <result column="create_time" property="createTime"></result>
         </association>
 
 

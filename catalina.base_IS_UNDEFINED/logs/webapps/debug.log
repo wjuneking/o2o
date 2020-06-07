@@ -1,41 +1,6 @@
-2020-06-06 12:20:17.320 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id 
-2020-06-06 12:20:17.399 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: 
-2020-06-06 12:22:19.079 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:22:19.141 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:22:59.262 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:22:59.654 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:23:36.513 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:23:36.556 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:25:42.944 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:25:43.022 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:25:43.069 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
-2020-06-06 12:26:03.610 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:26:03.693 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:26:03.743 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
-2020-06-06 12:26:50.008 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:26:50.086 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:26:50.117 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
-2020-06-06 12:27:37.376 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:27:37.454 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:29:51.361 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ta.user_id as uid,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:29:51.424 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:32:50.166 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ta.user_id as uid,ti.name from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:32:50.228 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:33:14.971 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ta.user_id as uid,ti.name from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:33:15.034 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:35:36.121 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.username,ta.local_auth_id,ta.user_id as uid,ti.name from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:35:36.215 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:39:08.045 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.name from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:39:08.107 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:42:02.632 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.name from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:42:02.680 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:42:02.714 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
-2020-06-06 12:50:15.686 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:50:15.754 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:50:15.796 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
-2020-06-06 12:50:47.614 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:50:47.712 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:50:47.746 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
-2020-06-06 12:51:54.624 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
-2020-06-06 12:51:54.699 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
-2020-06-06 12:51:54.731 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
+2020-06-07 22:03:35.940 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
+2020-06-07 22:03:36.019 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
+2020-06-07 22:03:36.065 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
+2020-06-07 22:04:11.090 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==>  Preparing: select ta.*,ti.* from tb_local_auth ta,tb_person_info ti WHERE ta.user_id=ti.user_id and username=? and password=? 
+2020-06-07 22:04:11.137 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - ==> Parameters: wjj(String), 199945(String)
+2020-06-07 22:04:11.168 [main] DEBUG cn.edu.hznu.dao.IAuthDao.login - <==      Total: 1
