@@ -22,6 +22,7 @@ import jdk.nashorn.internal.runtime.UserAccessorProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -165,8 +166,17 @@ public class ShopManagementController {
             modelMap.put("shop",res);
             modelMap.put("success",true);
         } else {
-            modelMap.put("success",false);
-            modelMap.put("errMsg","没有该店铺信息");
+            Object obj=request.getSession().getAttribute("currentShop");
+            if(obj==null){
+                modelMap.put("success",false);
+                modelMap.put("errMsg","没有该店铺信息");
+            } else {
+                Shop currentShop=(Shop)obj;
+                res=shopService.queryById(currentShop.getShopId());
+                modelMap.put("shop",res);
+                modelMap.put("success",true);
+            }
+
         }
         return modelMap;
     }
@@ -202,7 +212,11 @@ public class ShopManagementController {
             shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
         }
         // 2.修改店铺
-        if (shop != null&&shop.getShopId()!=null) {
+        if (shop != null) {
+            if(shop.getShopId()==null){
+                if (getCurrentShop(request)!=null)
+                    shop.setShopId(getCurrentShop(request).getShopId());
+            }
             //PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
             PersonInfo owner = new PersonInfo();
             owner.setUserId(1L);
@@ -320,6 +334,16 @@ public class ShopManagementController {
             request.getSession().setAttribute("currentShop",currentShop);
         }
         return modelMap;
+    }
+
+    private Shop getCurrentShop(HttpServletRequest request){
+        Object obj= request.getSession().getAttribute("currentShop");
+        if(obj==null){
+            return null;
+        } else {
+            Shop currentShop=(Shop)obj;
+           return currentShop;
+        }
     }
 
 }

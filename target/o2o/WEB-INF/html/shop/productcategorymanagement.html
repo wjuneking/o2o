@@ -1,61 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" co ntent="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>类别管理</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet"
-          href="../resources/css/common/sm.min.css">
-    <link rel="stylesheet"
-          href="../resources/css/common/sm-extend.min.css">
-    <link rel="stylesheet"
-          href="../resources/css/shop/productcategorymanagement.css">
+    <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
+    <link rel="stylesheet" href="../resources/css/shop/header.css">
+    <link rel="stylesheet" href="../resources/css/common/sm.min.css">
+    <link rel="stylesheet" href="../resources/css/common/sm-extend.min.css">
+
+	<link rel="stylesheet"
+		  href="../resources/css/shop/productcategorymanagement.css">
+    <!--<script src="../js/jquery-3.3.1.min.js"></script>-->
 
 </head>
 <body>
-<header class="bar bar-nav">
-    <h1 class="title">商店列表</h1>
-</header>
-<div class="content">
-    <div class="content-block">
+<div >
+	<div id="page-label-input" >
 
-        <div class="row row-product-category">
-            <div class="col-40">类别</div>
-            <div class="col-40">优先级</div>
-            <div class="col-20">操作</div>
-        </div>
-        <div class="category-wrap"></div>
-    </div>
-    <div class="content-block">
-        <div class="row">
-            <div class="col-50">
-                <a href="#"
-                   class="button button-big button-fill button-success"
-                id="new">新增</a>
-            </div>
-            <div class="col-50">
-                <a href="#"
-                   class="button button-big button-fill "
-                   id="submit">提交</a>
-            </div>
-        </div>
-    </div>
+		<header class="navbar bar-nav" >
+			<div class="ui-row-flex ui-whitespace">
+				<div class="ui-col ui-col"><a href="/o2o/shopadmin/productmanagement"><img id="back" src="../resources/img/back.svg"
+				></a>
+				</div>
+				<div class="ui-col ui-col" >类别</div>
+				<div class="ui-col ui-col" >管理</div>
+				<div class="ui-col ui-col"><a href="#"
+											  id="new"><img id="plus" src="../resources/img/plus.svg"
+				></a></div>
+			</div>
+		</header>
+		<ul class="ui-list ui-list-single ui-list ui-border-tb">
+			<li class="ui-border-t">
+				<div class="ui-list-info">
+					<div class="ui-row-flex ui-whitespace">
+						<div class="ui-col ui-col">类别</div>
+						<div class="ui-col ui-col">优先级</div>
+						<div class="ui-col ui-col">操作</div>
+						<div class="ui-col ui-col"></div>
+					</div>
+				</div>
+			</li>
+			<div class="category-wrap" >
+
+
+			</div>
+
+			<div class="ui-btn-wrap">
+				<button id="submit" class="ui-btn-lg ui-btn-primary">
+					提交
+				</button>
+			</div>
+		</ul>
+
+	</div>
+
 </div>
 <script type='text/javascript'
-        src='../resources/js/common/zepto.min.js' charset='utf-8'></script>
+		src='../resources/js/common/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript'
-        src='../resources/js/common/sm.min.js' charset='utf-8'></script>
+		src='../resources/js/common/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript'
-        src='../resources/js/common/sm-extend.min.js' charset='utf-8'></script>
+		src='../resources/js/common/sm-extend.min.js' charset='utf-8'></script>
 <script type='text/javascript'
-        src='../resources/js/common/sm-extend.min.js' charset='utf-8'></script>
+		src='../resources/js/common/sm-extend.min.js' charset='utf-8'></script>
 <script type='text/javascript'
-        src='../resources/js/common/common.js' charset='utf-8'></script>
+		src='../resources/js/common/common.js' charset='utf-8'></script>
 <script type='text/javascript' src='../resources/js/shop/productcategorymanagement.js'
-        charset='utf-8'></script>
+		charset='utf-8'></script>
 </body>
 </html>

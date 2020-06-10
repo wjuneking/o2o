@@ -1,12 +1,13 @@
 /**
  *
  */
-$(function() {
+$(function () {
     // 从URL里获取shopId参数的值
+    var register = getQueryString('register');
     var shopId = getQueryString('shopId');
     // 由于店铺注册和编辑使用的是同一个页面，
     // 该标识符用来标明本次是添加还是编辑操作
-    var isEdit = shopId ? true : false;
+    var isRegister = register ? true : false;
     // 用于店铺注册时候的店铺类别以及区域列表的初始化的URL
     var initUrl = '/o2o/shopadmin/getshopinitinfo';
     // 注册店铺的URL
@@ -16,14 +17,15 @@ $(function() {
     // 编辑店铺信息的URL
     var editShopUrl = '/o2o/shopadmin/modifyshop';
     // 判断是编辑操作还是注册操作
-    if (!isEdit) {
+    if (isRegister) {
         getShopInitInfo();
     } else {
         getShopInfo(shopId);
     }
+
     // 通过店铺Id获取店铺信息
     function getShopInfo(shopId) {
-        $.getJSON(shopInfoUrl, function(data) {
+        $.getJSON(shopInfoUrl, function (data) {
             if (data.success) {
                 // 若访问成功，则依据后台传递过来的店铺信息为表单元素赋值
                 var shop = data.shop;
@@ -36,8 +38,8 @@ $(function() {
                     + shop.shopCategory.shopCategoryId + '" selected>'
                     + shop.shopCategory.shopCategoryName + '</option>';
                 var tempAreaHtml = '<option data-id="'
-                    + shop.area.areaId+'" selected>'
-                    + shop.area.areaName+'</option>';
+                    + shop.area.areaId + '" selected>'
+                    + shop.area.areaName + '</option>';
                 $('#shop-category').html(shopCategory);
                 // 不允许选择店铺类别
                 $('#shop-category').attr('disabled', 'disabled');
@@ -47,17 +49,18 @@ $(function() {
             }
         });
     }
+
     // 取得所有二级店铺类别以及区域信息，并分别赋值进类别列表以及区域列表
     function getShopInitInfo() {
-        $.getJSON(initUrl, function(data) {
+        $.getJSON(initUrl, function (data) {
             if (data.success) {
                 var tempHtml = '';
                 var tempAreaHtml = '';
-                data.shopCategories.map(function(item, index) {
+                data.shopCategories.map(function (item, index) {
                     tempHtml += '<option data-id="' + item.shopCategoryId
                         + '">' + item.shopCategoryName + '</option>';
                 });
-                data.areas.map(function(item, index) {
+                data.areas.map(function (item, index) {
                     tempAreaHtml += '<option data-id="' + item.areaId + '">'
                         + item.areaName + '</option>';
                 });
@@ -66,11 +69,12 @@ $(function() {
             }
         });
     }
+
     // 提交按钮的事件响应，分别对店铺注册和编辑操作做不同响应
-    $('#submit').click(function() {
+    $('#submit').click(function () {
         // 创建shop对象
         var shop = {};
-        if (isEdit) {
+        if (!isRegister) {
             // 若属于编辑，则给shopId赋值
             shop.shopId = shopId;
         }
@@ -81,13 +85,13 @@ $(function() {
         shop.shopDesc = $('#shop-desc').val();
         // 选择选定好的店铺类别
         shop.shopCategory = {
-            shopCategoryId : $('#shop-category').find('option').not(function() {
+            shopCategoryId: $('#shop-category').find('option').not(function () {
                 return !this.selected;
             }).data('id')
         };
         // 选择选定好的区域信息
         shop.area = {
-            areaId : $('#area').find('option').not(function() {
+            areaId: $('#area').find('option').not(function () {
                 return !this.selected;
             }).data('id')
         };
@@ -111,16 +115,16 @@ $(function() {
         console.log(formData.get('shopImg'));
         // 将数据提交至后台处理相关操作
         $.ajax({
-            url : (isEdit ? editShopUrl : registerShopUrl),
-            type : 'POST',
-            data : formData,
-            contentType : false,
-            processData : false,
-            cache : false,
-            success : function(data) {
+            url: (isRegister ? registerShopUrl : editShopUrl),
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
+            success: function (data) {
                 if (data.success) {
                     $.toast('提交成功！');
-                    if (!isEdit) {
+                    if (isRegister) {
                         // 若为注册操作，成功后返回店铺列表页
                         window.location.href = "/o2o/shopadmin/shoplist";
                     }

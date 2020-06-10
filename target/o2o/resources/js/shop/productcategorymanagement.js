@@ -1,6 +1,5 @@
 $(function () {
     var shopId = getQueryString('shopId');
-    console.log(shopId);
     getlist();
     function getlist() {
         $.ajax({
@@ -19,27 +18,29 @@ $(function () {
     function handleList(data) {
         var html = '';
         data.map(function(item, index) {
-            html += '<div class="row row-product-category now"><div class="col-40">'
-                + item.productCategoryName + '</div><div class="col-40">'
+            html += '<div class="ui-row-flex ui-whitespace row-product-category now"><div class="ui-col ui-col">'
+                + item.productCategoryName + '</div><div class="ui-col ui-col">'
                 + item.priority
-                + '</div><div class="col-20">'
+                + '</div><div class="ui-col ui-col">'
                 +  '<a href="#" data-id="'+item.productCategoryId+'" class="delete button" >删除</a>'
-                + '</div></div>';
+                + '</div>'
+                + '<div class="ui-col ui-col"></div>'+'</div>';
 
         });
         $('.category-wrap').html(html);
     };
     $("#new").click(function () {
-        temphtml='<div class="row row-product-category temp">' +
-            '            <div class="col-40">' +
-            '                <input  type="text" id="productCategoryName"/>' +
+        temphtml='<div class="ui-row-flex ui-whitespace row-product-category temp">' +
+            '            <div class="ui-col ui-col">' +
+            '                <input  type="text" id="productCategoryName" />' +
             '            </div>' +
-            '            <div class="col-40">' +
+            '            <div class="ui-col ui-col">' +
             '                <input  type="text" id="priority"/>' +
             '            </div>' +
-            '            <div class="col-20">' +
+            '            <div class="ui-col ui-col">' +
             '                <a  href="#"  class="delete button">删除</a>' +
             '            </div>' +
+            '<div class="ui-col ui-col"></div>'+
             '        </div>' +
             ''
 

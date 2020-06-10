@@ -30,18 +30,23 @@ $(function() {
                     }
                     // 拼接每件商品的行信息
                     tempHtml += '' + '<div class="row row-product">'
-                        + '<div class="col-33">'
+                        +'<li class="ui-border-t">'
+                        +'<div class="ui-list-info">'
+                        +'<div class="ui-row-flex ui-whitespace">'
+                        + '<div class="ui-col ui-col">'
                         + item.productName
                         + '</div>'
                         // + '<div class="col-20">'
                         // + item.point
                         // + '</div>'
-                        + '<div class="col-60">'
+                        + '<div class="ui-col ui-col">'
                         + '<a href="#" class="edit" data-id="'
                         + item.productId
                         + '" data-status="'
                         + item.enableStatus
                         + '">编辑</a>'
+                        +'</div>'
+                        + '<div class="ui-col ui-col">'
                         + '<a href="#" class="status" data-id="'
                         + item.productId
                         + '" data-status="'
@@ -49,11 +54,14 @@ $(function() {
                         + '">'
                         + textOp
                         + '</a>'
+                        +'</div>'
+                        + '<div class="ui-col ui-col">'
                         + '<a href="#" class="preview" data-id="'
                         + item.productId
                         + '" data-status="'
                         + item.enableStatus
                         + '">预览</a>'
+                        +'</div>'
                         + '</div>'
                         + '</div>';
                 });

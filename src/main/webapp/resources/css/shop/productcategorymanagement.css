@@ -1,16 +1,12 @@
-.row-product-category {
-    border: 1px solid #999;
-    padding: .5rem;
-    border-bottom: none;
+.category-wrap{
+	margin-left:12px
 }
-.row-product-category:last-child {
-    border-bottom: 1px solid #999;
+.ui-row-flex{
+	margin-bottom: 6px
 }
-input {
-    border: none;
-    background-color: #eee;
+#productCategoryName{
+	width:60px;
 }
-#productCategoryName {
-    white-space: nowrap;
-    overflow-x: scroll;
+#priority{
+	width:60px;
 }

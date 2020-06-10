@@ -1,0 +1,18 @@
+.navbar{
+	background-color:#12B7F5;
+}
+.navbar .ui-row-flex{
+	height:60px;line-height:60px;
+}
+.navbar .ui-row-flex .ui-col:nth-child(2){
+	text-align:right;color:white;font-size:17px;height:60px;line-height:60px;
+}
+.navbar .ui-row-flex .ui-col:nth-child(3){
+	text-align:left;color:white;font-size:17px;height:60px;line-height:60px;
+}
+#back{
+	width:25px;height:60px;
+}
+#plus{
+	position:absolute;right:12px;width:20px;height:60px;
+}

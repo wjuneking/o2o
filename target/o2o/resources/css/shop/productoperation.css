@@ -1,0 +1,24 @@
+.ui-form .ui-form-item:nth-child(2) .item-title{
+	width:72px;
+}
+.ui-form .ui-form-item:nth-child(3) .item-title{
+	width:72px;
+}
+.ui-form .ui-form-item:nth-child(4) .item-title{
+	width:72px;
+}
+.ui-form .ui-form-item:nth-child(5) .item-title{
+	width:72px;
+}
+.ui-form .ui-form-item:nth-child(6) .item-title{
+	width:72px;
+}
+.ui-form .ui-form-item:nth-child(7) .item-title{
+	width:72px;
+}
+.ui-form .ui-form-item:nth-child(10) .item-title{
+	width:72px;
+}
+#captcha_img{
+	position:absolute;right:15px;height:46px;
+}

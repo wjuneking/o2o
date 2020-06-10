@@ -85,7 +85,7 @@ public class ShopServiceImpl implements IShopService {
                 return new ShopExecution(ShopStateEnum.NULL_SHOP);
             }
             //判断是否需要修改图片
-            if(img.getImg()!=null){
+            if(img!=null&&img.getImg()!=null){
                 Shop shoptemp=shopDao.queryById(shop.getShopId());
                 if(shoptemp.getShopImg()!=null){//
                     ImgUtil.deleteFileOrPath(shoptemp.getShopImg());
